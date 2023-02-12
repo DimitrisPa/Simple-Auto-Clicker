@@ -1,6 +1,6 @@
 <h1 align="center"> <img src="assets/logo.png" alt="Simple-Auto-Clicker"/>
 <br/>
-Simple-Auto-Clicker
+Simple Auto Clicker
 </h1>
 
 <p align="center"><b>A simple Auto-clicker designed for incremental games like Cookie Clicker written in Python.

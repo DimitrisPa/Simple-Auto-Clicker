@@ -19,7 +19,7 @@ thread = None
 clicks_ps = 10
 
 # Detect mouse.ico path
-icon_path = os.path.join(os.path.dirname(__file__), "mouse.png")
+icon_path = os.path.join(os.path.dirname(__file__), "mouse_circle.png")
 
 
 # Clicks per second input
@@ -100,13 +100,13 @@ customtkinter.set_default_color_theme("dark-blue")
 app.geometry("300x250")
 app.resizable(0, 0)
 app.iconphoto(True, tkinter.PhotoImage(file=icon_path))
-app.title("Simple-Auto-Clicker")
+app.title("Simple Auto Clicker")
 
 frame = customtkinter.CTkFrame(master=app)
 frame.pack(pady=20, padx=40, fill="both", expand=True)
 
 label = customtkinter.CTkLabel(
-    master=frame, text="Simple-Auto-Clicker", font=("Carlito", 16, "bold"))
+    master=frame, text="Simple Auto Clicker", font=("Carlito", 16, "bold"))
 label.pack(pady=10, padx=10)
 
 on_off_button = customtkinter.CTkButton(
