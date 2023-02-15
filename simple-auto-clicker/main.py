@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-import customtkinter
 import os
-from pynput import keyboard
-from pynput.keyboard import Listener
-from pynput.mouse import Button, Controller
 import threading
 import time
 import tkinter
+import customtkinter
+from pynput import keyboard
+from pynput.keyboard import Listener
+from pynput.mouse import Button, Controller
 
 # Hotkey F6
 TOGGLE_KEY = keyboard.Key.f6
