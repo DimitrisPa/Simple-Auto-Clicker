@@ -88,6 +88,7 @@ def start_l():
 
 # Thread for start_l function
 l_thread = threading.Thread(target=start_l)
+l_thread.daemon = True
 l_thread.start()
 
 
