@@ -10,19 +10,23 @@ from pynput.keyboard import Listener
 from pynput.mouse import Button, Controller
 
 # Hotkey F6
+
 TOGGLE_KEY = keyboard.Key.f6
 
 running = False
 thread = None
 
 # Default click speed value
+
 clicks_ps = 10
 
 # Detect mouse.ico path
+
 icon_path = os.path.join(os.path.dirname(__file__), "mouse_circle.png")
 
 
 # Clicks per second input
+
 def cps(event=None):
     global clicks_ps
     if entry.get() == "":
@@ -37,12 +41,14 @@ def cps(event=None):
 
 
 # Remove Placeholder_text on input
+
 def clear_placeholder_on_input(event):
     if entry.get() == "Clicks per second":
         entry.delete(0, "end")
 
 
 # Restore Placeholder_text on click
+
 def clear_placeholder_on_focus_out(event):
     if entry.get() == "":
         entry.insert(0, "Clicks per second")
@@ -50,6 +56,7 @@ def clear_placeholder_on_focus_out(event):
 
 
 # Left Click
+
 def clicking():
     mouse = Controller()
     while running:
@@ -59,6 +66,7 @@ def clicking():
 
 
 # Press function for button
+
 def press():
     global running, thread
     if not running:
@@ -69,6 +77,7 @@ def press():
 
 
 # Hotkey press function
+
 def toggle_key(key):
     global running, thread
     if key == TOGGLE_KEY:
@@ -81,23 +90,27 @@ def toggle_key(key):
 
 
 # Listener function
+
 def start_l():
     with Listener(on_press=toggle_key) as listener:
         listener.join()
 
 
 # Thread for start_l function
+
 l_thread = threading.Thread(target=start_l)
 l_thread.daemon = True
 l_thread.start()
 
 
 # CustomTkinter theme
+
 app = customtkinter.CTk()
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 
 # GUI Layout
+
 app.geometry("300x250")
 app.resizable(0, 0)
 app.iconphoto(True, tkinter.PhotoImage(file=icon_path))
